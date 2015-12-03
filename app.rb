@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/json'
 require 'json'
+require 'pry'
 
 configure do
   set :public_folder, 'public'
@@ -27,4 +28,9 @@ end
 get '/dishes/random.json' do
   content_type :json
   {dish: dishes.sample}.to_json
+end
+
+post '/hi' do
+  binding.pry
+  erb :index
 end
